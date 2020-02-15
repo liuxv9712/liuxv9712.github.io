@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>MySQL/MySQL_data | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="更小的通常更好  一般情况下，应该尽量使用可以正确存储数据的最小数据类型。更小的数据类型通常更快。  简单就好  简单数据类型的操作通常需要更少的cpu周期，例如整型比字符操作代价更低，因为字符集和校对规则（排序规则）使字符比较比整型比较更复杂，使用整型存储IP地址。  尽量避免NULL  通常情况下最好制定列为NOT NULL，除非真的需要存储NULL值。可为NULL的列更难优化。 整型TIN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL&#x2F;MySQL_data">
+<meta property="og:url" content="http://yoursite.com/2020/02/15/MySQL/MySQL_data/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="更小的通常更好  一般情况下，应该尽量使用可以正确存储数据的最小数据类型。更小的数据类型通常更快。  简单就好  简单数据类型的操作通常需要更少的cpu周期，例如整型比字符操作代价更低，因为字符集和校对规则（排序规则）使字符比较比整型比较更复杂，使用整型存储IP地址。  尽量避免NULL  通常情况下最好制定列为NOT NULL，除非真的需要存储NULL值。可为NULL的列更难优化。 整型TIN">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-15T04:18:26.579Z">
+<meta property="article:modified_time" content="2020-02-15T04:19:14.635Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-MySQL/MySQL_data" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/MySQL/MySQL_data/" class="article-date">
+  <time datetime="2020-02-15T04:18:26.579Z" itemprop="datePublished">2020-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MySQL/MySQL_data
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>更小的通常更好</li>
+</ul>
+<p>一般情况下，应该尽量使用可以正确存储数据的最小数据类型。更小的数据类型通常更快。</p>
+<ul>
+<li>简单就好</li>
+</ul>
+<p>简单数据类型的操作通常需要更少的cpu周期，例如整型比字符操作代价更低，因为字符集和校对规则（排序规则）使字符比较比整型比较更复杂，使用整型存储IP地址。</p>
+<ul>
+<li>尽量避免NULL</li>
+</ul>
+<p>通常情况下最好制定列为NOT NULL，除非真的需要存储NULL值。可为NULL的列更难优化。</p>
+<h3 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h3><p>TINYINT, SMALLINT, MEDIUMINT, INT, BIGINT 分别使用 8, 16, 24, 32, 64 位存储空间，一般情况下越小的列越好。</p>
+<p>INT(11) 中的数字只是规定了交互工具显示字符的个数，对于存储和计算来说是没有意义的。</p>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>FLOAT 和 DOUBLE 为浮点类型，DECIMAL 为高精度小数类型。CPU 原生不支持 DECIMAl 类型的计算，因此 DECIMAL 的计算代价更高。</p>
+<p>FLOAT、DOUBLE 和 DECIMAL 都可以指定列宽，例如 DECIMAL(18, 9) 表示总共 18 位，取 9 位存储小数部分，剩下 9 位存储整数部分。</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h5 id="1-CHAR"><a href="#1-CHAR" class="headerlink" title="1. CHAR"></a>1. CHAR</h5><p>CHAR 定长，末尾空格删除。</p>
+<p>使用场景：短字符串；定长字符串；经常变更的数据</p>
+<h5 id="2-VARCHAR"><a href="#2-VARCHAR" class="headerlink" title="2. VARCHAR"></a>2. VARCHAR</h5><p>VARCHAR 变长，末尾空格保留，</p>
+<p>VARCHAR 在 UPDATE 时若比原来更长，需要做额外的工作。MyISAM 拆数据，InnoDB 分裂页。</p>
+<p>使用场景：最大长度比平均长度大很多；更新很少；复杂字符集</p>
+<h5 id="3-BLOB和TEXT"><a href="#3-BLOB和TEXT" class="headerlink" title="3. BLOB和TEXT"></a>3. BLOB和TEXT</h5><p>blob和text都是为了存储很大的数据而设计的字符串数据类型，分别采用二进制和字符串方式存储。尽量避免使用text和blob类型</p>
+<h3 id="时间和日期"><a href="#时间和日期" class="headerlink" title="时间和日期"></a>时间和日期</h3><h5 id="1-DATETIME"><a href="#1-DATETIME" class="headerlink" title="1. DATETIME"></a>1. DATETIME</h5><p>1001 年到 9999 年的日期和时间，精度为秒， 8 字节。时区无关。</p>
+<p>默认情况下，MySQL 以一种可排序的、无歧义的格式显示 DATETIME 值，例如“2008-01-16 22:37:08”，这是 ANSI 标准定义的日期和时间表示方法。</p>
+<h5 id="2-TIMESTAMP"><a href="#2-TIMESTAMP" class="headerlink" title="2. TIMESTAMP"></a>2. TIMESTAMP</h5><p>1970 年到 2038 年的时间戳，精度为秒， 4 字节。时区相关。</p>
+<p>MySQL 提供了 FROM_UNIXTIME() 函数把 UNIX 时间戳转换为日期，并提供了 UNIX_TIMESTAMP() 函数把日期转换为 UNIX 时间戳。</p>
+<p>TIMESTAMP 比 DATETIME 空间效率更高。</p>
+<h3 id="IPv4地址"><a href="#IPv4地址" class="headerlink" title="IPv4地址"></a>IPv4地址</h3><p>IP地址实际上是32位无符号整数，小数点分割只是为了方便阅读。MySQL 提供了 INET_ATON() 和 INET_NTOA() 函数在这两种方法之间转换。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/02/15/MySQL/MySQL_data/" data-id="ck6n3dhls0000wgq7h9327q2h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/15/MySQL/MySQL01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">MySQL/MySQL01</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/02/15/MySQL/MySQL_data/">MySQL/MySQL_data</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/15/MySQL/MySQL01/">MySQL/MySQL01</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/14/jsFunction/">JavaScript常用函数</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/firstBlog/">firstBlog</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/11/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
