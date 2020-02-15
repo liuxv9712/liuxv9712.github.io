@@ -64,6 +64,72 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-MySQL/MySQL01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/MySQL/MySQL01/" class="article-date">
+  <time datetime="2020-02-15T04:04:55.736Z" itemprop="datePublished">2020-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/15/MySQL/MySQL01/">MySQL/MySQL01</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-函数依赖"><a href="#1-函数依赖" class="headerlink" title="1 函数依赖"></a>1 函数依赖</h3><p>记 A-&gt;B 表示 A 函数决定 B，也可以说 B 函数依赖于 A。</p>
+<h5 id="键码"><a href="#键码" class="headerlink" title="键码"></a>键码</h5><p>如果 {A1，A2，… ，An} 是关系的一个或多个属性的集合，该集合函数决定了关系的其它所有属性并且是最小的，那么该集合就称为键码。</p>
+<h5 id="完全函数依赖"><a href="#完全函数依赖" class="headerlink" title="完全函数依赖"></a>完全函数依赖</h5><p>对于 A-&gt;B，如果能找到 A 的真子集 A’，使得 A’-&gt; B，那么 A-&gt;B 就是部分函数依赖，否则就是完全函数依赖。</p>
+<h5 id="传递函数依赖"><a href="#传递函数依赖" class="headerlink" title="传递函数依赖"></a>传递函数依赖</h5><p>对于 A-&gt;B，B-&gt;C，则 A-&gt;C 是一个传递函数依赖。</p>
+<h3 id="2-异常"><a href="#2-异常" class="headerlink" title="2 异常"></a>2 异常</h3><p>不符合范式的关系，会产生很多异常，主要有以下四种异常：</p>
+<ul>
+<li>冗余数据</li>
+<li>修改异常：修改了一个记录中的信息，但是另一个记录中相同的信息却没有被修改。</li>
+<li>删除异常：删除一个信息，也会丢失其它信息。</li>
+<li>插入异常：想要插入一个的信息，如果此信息依赖的其他信息还没插入，就无法此信息。<h3 id="3-范式"><a href="#3-范式" class="headerlink" title="3 范式"></a>3 范式</h3></li>
+</ul>
+<p>在范式化的数据库中，每个事实数据会出现并且只出现一次；相反，在反范式化的数据库中，信息是冗余的，可能会存储在多个地方。</p>
+<p>高级别范式的依赖于低级别的范式，1NF 是最低级别的范式。</p>
+<h5 id="1-第一范式-1NF"><a href="#1-第一范式-1NF" class="headerlink" title="1. 第一范式 (1NF)"></a>1. 第一范式 (1NF)</h5><p>属性不可分。</p>
+<h5 id="2-第二范式-2NF"><a href="#2-第二范式-2NF" class="headerlink" title="2. 第二范式 (2NF)"></a>2. 第二范式 (2NF)</h5><p>1NF + 表必须有一个主键 + 非主键必须完全依赖于主键。</p>
+<h5 id="3-第三范式-3NF"><a href="#3-第三范式-3NF" class="headerlink" title="3. 第三范式 (3NF)"></a>3. 第三范式 (3NF)</h5><p>2NF + 非主键列必须直接依赖于主键，不能存在传递依赖。</p>
+<h3 id="4-ER-图"><a href="#4-ER-图" class="headerlink" title="4 ER 图"></a>4 ER 图</h3><p>Entity-Relationship，有三个组成部分：实体、属性、联系。</p>
+<p>用来进行关系型数据库系统的概念设计。</p>
+<h5 id="实体的三种联系"><a href="#实体的三种联系" class="headerlink" title="实体的三种联系"></a>实体的三种联系</h5><p>包含一对一，一对多，多对多三种。</p>
+<ul>
+<li>如果 A 到 B 是一对多关系，那么画个带箭头的线段指向 B；</li>
+<li>如果是一对一，画两个带箭头的线段；</li>
+<li>如果是多对多，画两个不带箭头的线段。</li>
+</ul>
+<h5 id="表示出现多次的关系"><a href="#表示出现多次的关系" class="headerlink" title="表示出现多次的关系"></a>表示出现多次的关系</h5><p>一个实体在联系出现几次，就要用几条线连接。</p>
+<h5 id="联系的多向性"><a href="#联系的多向性" class="headerlink" title="联系的多向性"></a>联系的多向性</h5><p>虽然老师可以开设多门课，并且可以教授多名学生，但是对于特定的学生和课程，只有一个老师教授，这就构成了一个三元联系。</p>
+<p><img src="../../pic/1545119136370.png" alt=""></p>
+<p>一般只使用二元联系，可以把多元联系转换为二元联系。</p>
+<p><img src="../../pic/1545119138206.png" alt=""></p>
+<h5 id="表示子类"><a href="#表示子类" class="headerlink" title="表示子类"></a>表示子类</h5><p>用一个三角形和两条线来连接类和子类，与子类有关的属性和联系都连到子类上，而与父类和子类都有关的连到父类上。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/02/15/MySQL/MySQL01/" data-id="ck6n35dvl0000uwq7601uhcpx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jsFunction" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/14/jsFunction/" class="article-date">
@@ -217,6 +283,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/02/15/MySQL/MySQL01/">MySQL/MySQL01</a>
+          </li>
         
           <li>
             <a href="/2020/02/14/jsFunction/">JavaScript常用函数</a>
