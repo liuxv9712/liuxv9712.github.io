@@ -160,6 +160,134 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-计算机网络/计算机网络概念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/">计算机网络/计算机网络概念</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/" class="archive-article-date">
+  	<time datetime="2020-02-18T08:47:15.690Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、计算机网络的概念、组成与功能"><a href="#一、计算机网络的概念、组成与功能" class="headerlink" title="一、计算机网络的概念、组成与功能"></a>一、计算机网络的概念、组成与功能</h2><hr>
+<h3 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h3><p>互联网基本特点：连通性和共享性</p>
+<h4 id="（1）网络、互联网和主机"><a href="#（1）网络、互联网和主机" class="headerlink" title="（1）网络、互联网和主机"></a>（1）网络、互联网和主机</h4><ul>
+<li>网路：由若干个结点和链接这些结点的链路组成</li>
+<li>互连网：网络的网络</li>
+<li>主机：与网络相连的计算机<h4 id="（2）互联网基础结构发展的三个阶段"><a href="#（2）互联网基础结构发展的三个阶段" class="headerlink" title="（2）互联网基础结构发展的三个阶段"></a>（2）互联网基础结构发展的三个阶段</h4></li>
+<li>第一阶段：从单个网络向互联网发展的过程</li>
+<li>第二阶段：建成了三级结构的互联网，分为：主干网，地区网，校园网（或企业网）</li>
+<li>第三阶段：逐渐形成了多层次ISP（互联网服务提供商）结构的互联网</li>
+</ul>
+<hr>
+<h3 id="2、组成"><a href="#2、组成" class="headerlink" title="2、组成"></a>2、组成</h3><p>从工作方式上看，可以分为两大块：</p>
+<ul>
+<li>核心部分：由所有连接在互联网上的主机组成。是用户直接使用的。</li>
+<li>边缘部分：由大量网络和连接这些网络的路由器组成。是为边缘部分提供服务的。<h4 id="（1）互联网的边缘部分"><a href="#（1）互联网的边缘部分" class="headerlink" title="（1）互联网的边缘部分"></a>（1）互联网的边缘部分</h4>计算机之间的通信：进程与进程间的通信<br>计算机的通信方式：</li>
+<li>客户-服务器(Client/Server)：客户是服务的请求方，服务器是服务提供方</li>
+<li>对等连接（Peer-to-Peer）：不区分客户和服务器<h4 id="（2）互联网的核心部分"><a href="#（2）互联网的核心部分" class="headerlink" title="（2）互联网的核心部分"></a>（2）互联网的核心部分</h4>核心部分提供连通性，最重要的功能：分组交换（packet switching），由路由器实现<br>主机是为用户进行信息处理的，并且可以和其他主机通过网络交换信息。路由器则是用来转发分组的，即进行分组交换的<h5 id="1）电路交换"><a href="#1）电路交换" class="headerlink" title="1）电路交换"></a>1）电路交换</h5></li>
+<li>电路交换必定是面向连接的</li>
+<li>电路交换的三个阶段<ul>
+<li>建立连接（占用信道资源）</li>
+<li>通话（一直占用通信资源）</li>
+<li>释放连接（归还通信资源）</li>
+</ul>
+</li>
+<li>在通话时，两用户间占用端到端的资源</li>
+<li>传输效率低，浪费信道资源<h5 id="2）报文交换"><a href="#2）报文交换" class="headerlink" title="2）报文交换"></a>2）报文交换</h5>报文交换不要求在两个通信结点之间建立专用通路。结点把要发送的信息组织成一个数据包——报文，该报文中含有目标结点的地址，完整的报文在网络中一站一站地向前传送。<h5 id="3）分组交换"><a href="#3）分组交换" class="headerlink" title="3）分组交换"></a>3）分组交换</h5></li>
+<li>分组交换采用存储转发技术：收到分组-&gt;存储分组-&gt;查找路由表（路由选择协议）-&gt;转发分组</li>
+<li>在发送端，先把较长的报文划分成较短的、固定长度的数据段</li>
+<li>每一个数据段前加上首部（包头）构成分组（包）</li>
+<li>分组交换网以“分组”作为数据传输单元，依次把各分组发送到接收端<h5 id="4）电路交换、报文交换和分组交换的比较"><a href="#4）电路交换、报文交换和分组交换的比较" class="headerlink" title="4）电路交换、报文交换和分组交换的比较"></a>4）电路交换、报文交换和分组交换的比较</h5></li>
+<li>电路交换：整个报文的比特流连续地从源点直达终点，好像在一个管道中传送</li>
+<li>报文交换：整个报文先传送到相邻节点，全部存储下来后查找转发表，转发到下一个节点</li>
+<li>分组交换：单个分组（整个报文的一部分），传送到相邻节点，存储下来在查表转发至下一节点 <h4 id="（3）功能"><a href="#（3）功能" class="headerlink" title="（3）功能"></a>（3）功能</h4><h2 id="二、计算机网络的分类"><a href="#二、计算机网络的分类" class="headerlink" title="二、计算机网络的分类"></a>二、计算机网络的分类</h2><h5 id="按照网络的作用范围划分"><a href="#按照网络的作用范围划分" class="headerlink" title="按照网络的作用范围划分"></a>按照网络的作用范围划分</h5></li>
+<li>广域网 WAN（Wide Area Network）：互联网的核心部分</li>
+<li>城域网 MAN（Metropolitan Area Network）：目前很多城域网采用的是以太网技术</li>
+<li>局域网 LAN（Local Area Network）</li>
+<li>个人区域网 PAN（Personal Area Network）<h5 id="按照网络的使用者划分"><a href="#按照网络的使用者划分" class="headerlink" title="按照网络的使用者划分"></a>按照网络的使用者划分</h5></li>
+<li>公用网 （public network）</li>
+<li>专用网 （private network）<h3 id="1、计算机网络分层结构"><a href="#1、计算机网络分层结构" class="headerlink" title="1、计算机网络分层结构"></a>1、计算机网络分层结构</h3>两种国际标准：</li>
+<li>ISO/OSI：法律上的国际标准，不过并没有得到市场的认可</li>
+<li>TCP/IP：事实上的国际标准，获得了最广泛的应用<h3 id="2、计算机网络协议、接口、服务等概念"><a href="#2、计算机网络协议、接口、服务等概念" class="headerlink" title="2、计算机网络协议、接口、服务等概念"></a>2、计算机网络协议、接口、服务等概念</h3><h4 id="（1）网络协议"><a href="#（1）网络协议" class="headerlink" title="（1）网络协议"></a>（1）网络协议</h4>为进行网络中的数据交换而建立的规则、标准或约定称为网络协议（network protocol）。由以下三个要素组成：</li>
+<li>语法：数据与控制信息的结构或格式</li>
+<li>语义：需要发出何种控制信息，完成何种动作以及做出何种响应</li>
+<li>同步：即事件实现顺序的详细信息（时序）<h4 id="（2）实体与协议"><a href="#（2）实体与协议" class="headerlink" title="（2）实体与协议"></a>（2）实体与协议</h4></li>
+<li>实体：表示任何可发送或接受信息的硬件或软件进程</li>
+<li>协议：是控制两个对等实体（或多个实体）进行通信的规则的集合<br>在协议的控制下，两个对等实体间的通信使得本层能够向上一层提供服务，要实现本层协议，还需要使用下面一层所提供的的服务<h4 id="（3）协议与服务"><a href="#（3）协议与服务" class="headerlink" title="（3）协议与服务"></a>（3）协议与服务</h4></li>
+<li>协议是“水平的”，即协议是控制对等实体之间通信的规则。</li>
+<li>服务是“垂直的”，即服务是由下层向上层通过层间接口提供的。<br>下面的协议对上面的服务是“透明”的，即本层的服务用户只能看见服务而无法看见下面的协议</li>
+<li>同一系统相邻两层的实体进行交互的地方，称为服务访问点SAP(Service Access Point)</li>
+<li>协议必须把所有不利的条件事先都估计到，而不能假定一切都是正常的和非常理想的，还必须非常仔细的检查这个协议能否应付各种异常情况<h3 id="3、ISO-OSI-参考模型和-TCP-IP-模型"><a href="#3、ISO-OSI-参考模型和-TCP-IP-模型" class="headerlink" title="3、ISO/OSI 参考模型和 TCP/IP 模型"></a>3、ISO/OSI 参考模型和 TCP/IP 模型</h3></li>
+<li>OSI 七层模型：概念清晰、理论也较为完整、但它既复杂又不实用   </li>
+<li>TCP/IP 四层模型：实质上只有上面三层，最下面的网络接口层并没有什么具体内容  </li>
+<li>五层模型：综合 OSI 和 TCP/IP 的优点，学习计算机网络时采用。实际应用中还是 TCP/IP 四层模型。<h4 id="（1）五层模型"><a href="#（1）五层模型" class="headerlink" title="（1）五层模型"></a>（1）五层模型</h4></li>
+<li>应用层：通过应用进程间的交互来完成特定网络应用。数据单位为报文。</li>
+<li>运输层：为进程提供通用数据传输服务。主要使用以下两种协议<ul>
+<li>TCP：传输控制协议（Transmission Control Protocol）。提供面向连接、可靠的传输服务。数据单位是报文段</li>
+<li>UDP：用户数据报协议（User Datagram Protocol）。提供无连接、尽最大努力的传输服务。数据单位是用户数据报</li>
+<li>TCP 主要提供完整性服务，UDP 主要提供及时性服务。</li>
+</ul>
+</li>
+<li>网络层：为主机提供数据传输服务。把传输层传递下来的报文段或者用户数据报封装成分组。最重要的协议是 IP （网际协议，Internet Protocol）。</li>
+<li>数据链路层：为同一链路的主机提供数据传输服务。把网络层传下来的分组封装成帧。</li>
+<li>物理层：主要负责在物理线路上传输原始的二进制数据<h4 id="（2）OSI"><a href="#（2）OSI" class="headerlink" title="（2）OSI"></a>（2）OSI</h4>其中表示层和会话层用途如下：</li>
+<li>表示层 ：数据压缩、加密以及数据描述，这使得应用程序不必关心在各台主机中数据内部格式不同的问题。</li>
+<li>会话层 ：建立及管理会话。<br>五层协议没有表示层和会话层，而是将这些功能留给应用程序开发者处理。<h4 id="（3）TCP-IP"><a href="#（3）TCP-IP" class="headerlink" title="（3）TCP/IP"></a>（3）TCP/IP</h4>它只有四层，相当于五层协议中数据链路层和物理层合并为网络接口层。<br>TCP/IP 体系结构不严格遵循 OSI 分层概念，应用层可能会直接使用 IP 层或者网络接口层。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-前端/debug" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
