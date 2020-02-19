@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 柳小白Blog</title>
+  <title>操作系统/进程、线程的区别和使用场景 | 柳小白Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="柳小白Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="进程、线程的区别和使用场景1. 进程 进程是系统进行资源分配和调度的一个独立单位 。  程序并不能单独运行，只有将程序装载到内存中，系统为它分配资源才能运行，而这种执行的程序就称之为进程。   在多道编程中，我们允许多个程序同时加载到内存中，在操作系统的调度下，可以实现并发地执行。  进程的出现让每个用户感觉到自己独享CPU，因此，进程就是为了在CPU上实现多道编程而提出的。    2. 线程 引">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统&#x2F;进程、线程的区别和使用场景">
+<meta property="og:url" content="http://yoursite.com/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/index.html">
 <meta property="og:site_name" content="柳小白Blog">
+<meta property="og:description" content="进程、线程的区别和使用场景1. 进程 进程是系统进行资源分配和调度的一个独立单位 。  程序并不能单独运行，只有将程序装载到内存中，系统为它分配资源才能运行，而这种执行的程序就称之为进程。   在多道编程中，我们允许多个程序同时加载到内存中，在操作系统的调度下，可以实现并发地执行。  进程的出现让每个用户感觉到自己独享CPU，因此，进程就是为了在CPU上实现多道编程而提出的。    2. 线程 引">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-19T01:25:20.413Z">
+<meta property="article:modified_time" content="2020-02-19T01:01:26.210Z">
 <meta property="article:author" content="Liu Xv">
 <meta name="twitter:card" content="summary">
   
@@ -158,292 +162,229 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-操作系统/进程、线程的区别和使用场景" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E4%BC%98%E5%8A%A3/" class="archive-article-date">
-  	<time datetime="2020-02-19T01:25:20.414Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E4%BC%98%E5%8A%A3/">操作系统/进程间通信的优劣</a>
+    <h1 class="article-title" itemprop="name">
+      操作系统/进程、线程的区别和使用场景
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="archive-article-date">
+        
+        <a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="archive-article-date">
   	<time datetime="2020-02-19T01:25:20.413Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/">操作系统/进程、线程的区别和使用场景</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="进程、线程的区别和使用场景"><a href="#进程、线程的区别和使用场景" class="headerlink" title="进程、线程的区别和使用场景"></a>进程、线程的区别和使用场景</h1><h2 id="1-进程"><a href="#1-进程" class="headerlink" title="1. 进程"></a>1. 进程</h2><ul>
+<li><p>进程是<strong>系统进行资源分配和调度</strong>的一个独立单位 。</p>
+</li>
+<li><p>程序并不能单独运行，只有将程序装载到内存中，系统为它分配资源才能运行，而这种执行的程序就称之为进程。 </p>
+</li>
+<li><p>在多道编程中，我们允许多个程序同时加载到内存中，在操作系统的调度下，可以实现并发地执行。 </p>
+<p>进程的出现让每个用户感觉到自己独享CPU，因此，进程就是为了在CPU上实现多道编程而提出的。 </p>
+</li>
+</ul>
+<h2 id="2-线程"><a href="#2-线程" class="headerlink" title="2. 线程"></a>2. 线程</h2><ul>
+<li>引入：为什么需要线程<ul>
+<li>进程只能在一个时间干一件事，如果想同时干两件事或多件事，进程就无能为力了。</li>
+<li>进程在执行的过程中如果阻塞，例如等待输入，整个进程就会挂起，即使进程中有些工作不依赖于输入的数据，也将无法执行。</li>
+</ul>
+</li>
+<li>线程是进程的一个实体，是<strong>CPU调度和分派</strong>的基本单位，它是比进程更小的能独立运行的基本单位。</li>
+</ul>
+<h2 id="3-区别"><a href="#3-区别" class="headerlink" title="3. 区别"></a>3. 区别</h2><ul>
+<li>线程是进程的一个实体，是比进程更小的能独立运行的基本单位</li>
+<li>进程有独立的地址空间，而线程没有，线程只有自己的栈、程序计数器、寄存器</li>
+<li>进程崩溃时不会对其他进程产生影响，线程崩溃时整个进程都会崩溃</li>
+<li>进程切换、创建、销毁比较麻烦，线程比较简单</li>
+</ul>
+<h2 id="4-多进程和多线程的使用场景"><a href="#4-多进程和多线程的使用场景" class="headerlink" title="4. 多进程和多线程的使用场景"></a>4. 多进程和多线程的使用场景</h2><ul>
+<li><table>
+<thead>
+<tr>
+<th align="center">对比维度</th>
+<th align="center">多进程</th>
+<th align="center">多线程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数据共享、同步</td>
+<td align="center">数据共享复杂，需要用IPC；数据是分开的，同步简单</td>
+<td align="center">因为共享进程数据，数据共享简单，但也是因为这个原因导致同步复杂</td>
+</tr>
+<tr>
+<td align="center">内存、CPU</td>
+<td align="center">占用内存多，切换复杂，CPU利用率低</td>
+<td align="center">占用内存少，切换简单，CPU利用率高</td>
+</tr>
+<tr>
+<td align="center">创建销毁、切换</td>
+<td align="center">创建销毁、切换复杂，速度慢</td>
+<td align="center">创建销毁、切换简单，速度很快</td>
+</tr>
+<tr>
+<td align="center">编程、调试</td>
+<td align="center">编程简单，调试简单</td>
+<td align="center">编程复杂，调试复杂</td>
+</tr>
+<tr>
+<td align="center">可靠性</td>
+<td align="center">进程间不会互相影响</td>
+<td align="center">一个线程挂掉将导致整个进程挂掉</td>
+</tr>
+<tr>
+<td align="center">分布式</td>
+<td align="center">适应于多核、多机分布式；如果一台机器不够，扩展到多台机器比较简单</td>
+<td align="center">适应于多核分布式</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%81%E5%AE%9E%E7%8E%B0%EF%BC%8C%E5%88%86%E9%A1%B5%E3%80%81%E5%88%86%E6%AE%B5%E3%80%81%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2020-02-19T01:25:20.412Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E4%BC%98%E5%8A%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          操作系统/进程间通信的优劣
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%81%E5%AE%9E%E7%8E%B0%EF%BC%8C%E5%88%86%E9%A1%B5%E3%80%81%E5%88%86%E6%AE%B5%E3%80%81%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">操作系统/虚拟内存的作用、实现，分页、分段、段页式的区别</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%81%E5%AE%9E%E7%8E%B0%EF%BC%8C%E5%88%86%E9%A1%B5%E3%80%81%E5%88%86%E6%AE%B5%E3%80%81%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB/">操作系统/虚拟内存的作用、实现，分页、分段、段页式的区别</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/" class="archive-article-date">
-  	<time datetime="2020-02-18T08:47:15.690Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/">计算机网络/计算机网络概念</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/18/%E5%89%8D%E7%AB%AF/debug/" class="archive-article-date">
-  	<time datetime="2020-02-18T01:51:10.742Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/18/%E5%89%8D%E7%AB%AF/debug/">前端/debug</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/15/MySQL/MySQL_SQL/" class="archive-article-date">
-  	<time datetime="2020-02-15T04:32:26.070Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/MySQL/MySQL_SQL/">MySQL/MySQL_SQL</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/15/MySQL/MySQL_data/" class="archive-article-date">
-  	<time datetime="2020-02-15T04:18:26.579Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/MySQL/MySQL_data/">MySQL/MySQL_data</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/15/MySQL/MySQL_why/" class="archive-article-date">
-  	<time datetime="2020-02-15T04:04:55.736Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/MySQL/MySQL_why/">MySQL/MySQL_why</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/14/%E5%89%8D%E7%AB%AF/jsFunction/" class="archive-article-date">
-  	<time datetime="2020-02-14T07:57:51.220Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/14/%E5%89%8D%E7%AB%AF/jsFunction/">JavaScript常用函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/11/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-11T11:09:14.509Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/11/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -466,8 +407,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

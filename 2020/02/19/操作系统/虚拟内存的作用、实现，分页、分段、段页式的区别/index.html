@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 柳小白Blog</title>
+  <title>操作系统/虚拟内存的作用、实现，分页、分段、段页式的区别 | 柳小白Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="柳小白Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="虚拟内存的作用、实现，分页、分段的区别1. 虚拟内存的作用 虚拟内存其实是将内存看作是磁盘的高速缓存。内存只保存活动区域，其间，根据需要在磁盘和内存之间来回传递数据（即页面置换算法），高效使用内存 为每个进程提供了一个一致的、私有的、连续的地址，让每个进程都以为自己在独占内存，简化了编码者对存储器的管理 提供了进程间的隔离性，防止进程写了其他进程的内存空间，导致莫名其妙的错误出现，保护每个进程的数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统&#x2F;虚拟内存的作用、实现，分页、分段、段页式的区别">
+<meta property="og:url" content="http://yoursite.com/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%81%E5%AE%9E%E7%8E%B0%EF%BC%8C%E5%88%86%E9%A1%B5%E3%80%81%E5%88%86%E6%AE%B5%E3%80%81%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="柳小白Blog">
+<meta property="og:description" content="虚拟内存的作用、实现，分页、分段的区别1. 虚拟内存的作用 虚拟内存其实是将内存看作是磁盘的高速缓存。内存只保存活动区域，其间，根据需要在磁盘和内存之间来回传递数据（即页面置换算法），高效使用内存 为每个进程提供了一个一致的、私有的、连续的地址，让每个进程都以为自己在独占内存，简化了编码者对存储器的管理 提供了进程间的隔离性，防止进程写了其他进程的内存空间，导致莫名其妙的错误出现，保护每个进程的数">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-19T01:25:20.412Z">
+<meta property="article:modified_time" content="2020-02-19T01:01:26.209Z">
 <meta property="article:author" content="Liu Xv">
 <meta name="twitter:card" content="summary">
   
@@ -158,292 +162,203 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-操作系统/虚拟内存的作用、实现，分页、分段、段页式的区别" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E4%BC%98%E5%8A%A3/" class="archive-article-date">
-  	<time datetime="2020-02-19T01:25:20.414Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E4%BC%98%E5%8A%A3/">操作系统/进程间通信的优劣</a>
+    <h1 class="article-title" itemprop="name">
+      操作系统/虚拟内存的作用、实现，分页、分段、段页式的区别
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="archive-article-date">
-  	<time datetime="2020-02-19T01:25:20.413Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/">操作系统/进程、线程的区别和使用场景</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%81%E5%AE%9E%E7%8E%B0%EF%BC%8C%E5%88%86%E9%A1%B5%E3%80%81%E5%88%86%E6%AE%B5%E3%80%81%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
+        
+        <a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%81%E5%AE%9E%E7%8E%B0%EF%BC%8C%E5%88%86%E9%A1%B5%E3%80%81%E5%88%86%E6%AE%B5%E3%80%81%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
   	<time datetime="2020-02-19T01:25:20.412Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%81%E5%AE%9E%E7%8E%B0%EF%BC%8C%E5%88%86%E9%A1%B5%E3%80%81%E5%88%86%E6%AE%B5%E3%80%81%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB/">操作系统/虚拟内存的作用、实现，分页、分段、段页式的区别</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="虚拟内存的作用、实现，分页、分段的区别"><a href="#虚拟内存的作用、实现，分页、分段的区别" class="headerlink" title="虚拟内存的作用、实现，分页、分段的区别"></a>虚拟内存的作用、实现，分页、分段的区别</h1><h2 id="1-虚拟内存的作用"><a href="#1-虚拟内存的作用" class="headerlink" title="1. 虚拟内存的作用"></a>1. 虚拟内存的作用</h2><ul>
+<li>虚拟内存其实是将内存看作是磁盘的高速缓存。内存只保存活动区域，其间，根据需要在磁盘和内存之间来回传递数据（即页面置换算法），高效使用内存</li>
+<li>为每个进程提供了一个一致的、私有的、连续的地址，让每个进程都以为自己在独占内存，简化了编码者对存储器的管理</li>
+<li>提供了进程间的隔离性，防止进程写了其他进程的内存空间，导致莫名其妙的错误出现，保护每个进程的数据空间不被其他进程破坏，进行数据隔离</li>
+</ul>
+<h2 id="2-虚拟内存的实现"><a href="#2-虚拟内存的实现" class="headerlink" title="2. 虚拟内存的实现"></a>2. 虚拟内存的实现</h2><p>为了达到以上的三个作用，虚拟内存需要两个维度的支持来实现：</p>
+<p>一个维度是硬件支持</p>
+<ul>
+<li>一定容量的内存和外存</li>
+<li>页表机制（或段表机制）</li>
+<li>中断机制，当用户程序需要访问的地址尚未调入内存，则产生中断</li>
+<li>地址转换机制，虚拟地址与物理地址的映射</li>
+</ul>
+<p>另一方面，有了这些硬件支持后，我们可以有多种方式进行虚拟地址和物理地址的映射，也就是操作系统课本上总是出现的：分段、分页和段页式，也是大家总是分不清的几个词。</p>
+<p>用最通俗易懂的方式来讲</p>
+<ul>
+<li><p>分段</p>
+<ul>
+<li><p>问题引出： 地址空间不隔离，某进程不小心修改到另一个进程的地址空间，导致奇怪的bug出现</p>
+</li>
+<li><p>简述作用：<strong>为了实现地址隔离</strong>，编码者希望在编码时不会误操作其他进程的地址</p>
+</li>
+<li><p>具体实现：分段式把连续虚拟地址空间划分为若干个段，每个段从0开始编址，并映射到连续物理地址空间，你写的程序操作的是虚拟地址空间，当你的程序运行时，需要把整段连续的虚拟地址，映射到内存中连续的物理地址。</p>
+<p>这时，你只能操控你的进程所分配到的虚拟地址，就实现了地址隔离。</p>
+</li>
+</ul>
+</li>
+<li><p>分页</p>
+<ul>
+<li><p>问题引出：分段的粒度为整个程序的不同段（如代码段、数据段）的虚拟内存是一个整体，在内存和磁盘间换进换出。而实际上在程序运行过程中，并不需要把它的整个段都放入内存，只需要把CPU当前使用到的代码、数据等放在内存中，假设有两个程序，一个70M，另一个40M，你有一块100M的辣鸡内存，如果按分段来运行，一次只能运行一个程序，放进了70M的程序进内存运行，但其实还有30M，你明明可以把另一个程序的一部分拿进来运行，但分段不允许你这么做，这时候，分页系统就出现了！</p>
+</li>
+<li><p>简述作用：<strong>使得进程的物理地址空间可以是非连续的</strong></p>
+</li>
+<li><p>具体实现：分页，将虚拟地址划分为固定大小的区域，称为页；物理地址分为同样大小固定的区域，称为块（帧）。可将用户程序的任一页放在任一块。 通过页面，页号，偏移量寻址（映射）</p>
+<p>当然了，分页时你的进程的虚拟地址空间仍然是连续的，但是这段虚拟地址空间所映射到的物理地址空间就不一定连续了。</p>
+</li>
+</ul>
+</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%81%E5%AE%9E%E7%8E%B0%EF%BC%8C%E5%88%86%E9%A1%B5%E3%80%81%E5%88%86%E6%AE%B5%E3%80%81%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/" class="archive-article-date">
-  	<time datetime="2020-02-18T08:47:15.690Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          操作系统/进程、线程的区别和使用场景
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算机网络/计算机网络概念</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/">计算机网络/计算机网络概念</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/18/%E5%89%8D%E7%AB%AF/debug/" class="archive-article-date">
-  	<time datetime="2020-02-18T01:51:10.742Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/18/%E5%89%8D%E7%AB%AF/debug/">前端/debug</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/15/MySQL/MySQL_SQL/" class="archive-article-date">
-  	<time datetime="2020-02-15T04:32:26.070Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/MySQL/MySQL_SQL/">MySQL/MySQL_SQL</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/15/MySQL/MySQL_data/" class="archive-article-date">
-  	<time datetime="2020-02-15T04:18:26.579Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/MySQL/MySQL_data/">MySQL/MySQL_data</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/15/MySQL/MySQL_why/" class="archive-article-date">
-  	<time datetime="2020-02-15T04:04:55.736Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/MySQL/MySQL_why/">MySQL/MySQL_why</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/14/%E5%89%8D%E7%AB%AF/jsFunction/" class="archive-article-date">
-  	<time datetime="2020-02-14T07:57:51.220Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/14/%E5%89%8D%E7%AB%AF/jsFunction/">JavaScript常用函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/11/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-11T11:09:14.509Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/11/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -466,8 +381,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
