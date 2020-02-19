@@ -626,19 +626,19 @@
 
 
   
-    <article id="post-前端/debug" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-前端/调试工具" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/%E5%89%8D%E7%AB%AF/debug/">前端/debug</a>
+      <a class="article-title" href="/2020/02/18/%E5%89%8D%E7%AB%AF/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/">前端/调试工具</a>
     </h1>
   
 
         
-        <a href="/2020/02/18/%E5%89%8D%E7%AB%AF/debug/" class="archive-article-date">
+        <a href="/2020/02/18/%E5%89%8D%E7%AB%AF/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" class="archive-article-date">
   	<time datetime="2020-02-18T01:51:10.742Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
@@ -653,8 +653,32 @@
 <li>Elements面板<br> 显示了渲染完毕后的全部HTML源码，在使用selenium爬取网页时可通过这些源码找到各便签的位置、属性等。更重要的是，双击HTML或右侧CSS源码，可以更改网页外观，即可对静态网页进行调试。</li>
 <li>Console面板<br> 用来显示网页加载过程中的日志信息，包括打印、警告，错误及其他可显示的信息等，同时它也是一个JavaScript交互控制台。</li>
 <li>Sources面板<br> 该面板以站点为分组，存放着请求下来的所有资源（HTML，CSS，jpg，gif，js等）</li>
-<li>Network面板<br> 记录了网络请求的详细信息，包括请求头、响应头、表单数据、参数信息等。<br> XHR表示ajax请求，Doc表示的是HTML文档类型，若要保留请求记录，勾选上preserve log.</li>
+<li>Network面板<br> 记录了网络请求的详细信息，包括请求头、响应头、表单数据、参数信息等。<br> XHR表示ajax请求，Doc表示的是HTML文档类型，若要保留请求记录，勾选上preserve log。</li>
+<li>在调试页面中的JavaScript代码时，Chrome DevTools的断点功能有：</li>
 </ol>
+<ul>
+<li>在每个<script>便签第一句代码执行时自动断点。<ul>
+<li>在Sources面板中右下角的EventListener Breakpoints > Script > Script First Statement。</li>
+</ul>
+</li>
+<li>在某个指定DOM方法被调用时自动断点。<ul>
+<li>用Console面板上的debug()函数，比如debug(alert),然后所有调用alert()的地方都会自动中断。</li>
+</ul>
+</li>
+<li>在未捕获的异常抛出时自动断点<ul>
+<li>在Sources面板右上角的Pause on exception按钮。</li>
+</ul>
+</li>
+<li>在匹配指定URL的XHR/fetch请求发起时自动断点<ul>
+<li>在Sources面板右下角的XHR/fetch Breakpoints。</li>
+</ul>
+</li>
+<li>在指定的节点被删粗时自动断点<ul>
+<li>在Elements面板中元素上右键 > Break on > node removal。</li>
+</ul>
+</li>
+<li>在遇到死循环代码的时候<em>不会</em>自动断点。</li>
+</ul>
 
       
 
@@ -667,7 +691,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/18/%E5%89%8D%E7%AB%AF/debug/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/18/%E5%89%8D%E7%AB%AF/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/">展开全文 >></a>
         </p>
       
 
@@ -1353,19 +1377,19 @@
 
 
   
-    <article id="post-前端/jsFunction" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-前端/常用函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/14/%E5%89%8D%E7%AB%AF/jsFunction/">JavaScript常用函数</a>
+      <a class="article-title" href="/2020/02/14/%E5%89%8D%E7%AB%AF/%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/">JavaScript常用函数</a>
     </h1>
   
 
         
-        <a href="/2020/02/14/%E5%89%8D%E7%AB%AF/jsFunction/" class="archive-article-date">
+        <a href="/2020/02/14/%E5%89%8D%E7%AB%AF/%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/" class="archive-article-date">
   	<time datetime="2020-02-14T07:57:51.220Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
 </a>
         
@@ -1398,7 +1422,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/14/%E5%89%8D%E7%AB%AF/jsFunction/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/14/%E5%89%8D%E7%AB%AF/%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/">展开全文 >></a>
         </p>
       
 

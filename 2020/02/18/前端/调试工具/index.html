@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>前端/debug | 柳小白Blog</title>
+  <title>前端/调试工具 | 柳小白Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Chrome调试工具Chrome调试工具打开方式：F12键或右键“检查”  定位小箭头按钮 可在定位页面中元素的相应的源码位置，或者选择源码位置相对应的页面元素。 手机&#x2F;PC视图切换按钮 可在PC网址网页和手机网址网页之间进行切换。（爬取手机网址网页比爬取PC更容易） Elements面板 显示了渲染完毕后的全部HTML源码，在使用selenium爬取网页时可通过这些源码找到各便签的位置、属性等。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端&#x2F;debug">
-<meta property="og:url" content="http://yoursite.com/2020/02/18/%E5%89%8D%E7%AB%AF/debug/index.html">
+<meta property="og:title" content="前端&#x2F;调试工具">
+<meta property="og:url" content="http://yoursite.com/2020/02/18/%E5%89%8D%E7%AB%AF/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/index.html">
 <meta property="og:site_name" content="柳小白Blog">
 <meta property="og:description" content="Chrome调试工具Chrome调试工具打开方式：F12键或右键“检查”  定位小箭头按钮 可在定位页面中元素的相应的源码位置，或者选择源码位置相对应的页面元素。 手机&#x2F;PC视图切换按钮 可在PC网址网页和手机网址网页之间进行切换。（爬取手机网址网页比爬取PC更容易） Elements面板 显示了渲染完毕后的全部HTML源码，在使用selenium爬取网页时可通过这些源码找到各便签的位置、属性等。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-18T01:51:10.742Z">
-<meta property="article:modified_time" content="2020-02-18T02:44:03.606Z">
+<meta property="article:modified_time" content="2020-02-19T02:02:20.246Z">
 <meta property="article:author" content="Liu Xv">
 <meta name="twitter:card" content="summary">
   
@@ -162,19 +162,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-前端/debug" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-前端/调试工具" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      前端/debug
+      前端/调试工具
     </h1>
   
 
         
-        <a href="/2020/02/18/%E5%89%8D%E7%AB%AF/debug/" class="archive-article-date">
+        <a href="/2020/02/18/%E5%89%8D%E7%AB%AF/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" class="archive-article-date">
   	<time datetime="2020-02-18T01:51:10.742Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
@@ -189,8 +189,32 @@
 <li>Elements面板<br> 显示了渲染完毕后的全部HTML源码，在使用selenium爬取网页时可通过这些源码找到各便签的位置、属性等。更重要的是，双击HTML或右侧CSS源码，可以更改网页外观，即可对静态网页进行调试。</li>
 <li>Console面板<br> 用来显示网页加载过程中的日志信息，包括打印、警告，错误及其他可显示的信息等，同时它也是一个JavaScript交互控制台。</li>
 <li>Sources面板<br> 该面板以站点为分组，存放着请求下来的所有资源（HTML，CSS，jpg，gif，js等）</li>
-<li>Network面板<br> 记录了网络请求的详细信息，包括请求头、响应头、表单数据、参数信息等。<br> XHR表示ajax请求，Doc表示的是HTML文档类型，若要保留请求记录，勾选上preserve log.</li>
+<li>Network面板<br> 记录了网络请求的详细信息，包括请求头、响应头、表单数据、参数信息等。<br> XHR表示ajax请求，Doc表示的是HTML文档类型，若要保留请求记录，勾选上preserve log。</li>
+<li>在调试页面中的JavaScript代码时，Chrome DevTools的断点功能有：</li>
 </ol>
+<ul>
+<li>在每个<script>便签第一句代码执行时自动断点。<ul>
+<li>在Sources面板中右下角的EventListener Breakpoints > Script > Script First Statement。</li>
+</ul>
+</li>
+<li>在某个指定DOM方法被调用时自动断点。<ul>
+<li>用Console面板上的debug()函数，比如debug(alert),然后所有调用alert()的地方都会自动中断。</li>
+</ul>
+</li>
+<li>在未捕获的异常抛出时自动断点<ul>
+<li>在Sources面板右上角的Pause on exception按钮。</li>
+</ul>
+</li>
+<li>在匹配指定URL的XHR/fetch请求发起时自动断点<ul>
+<li>在Sources面板右下角的XHR/fetch Breakpoints。</li>
+</ul>
+</li>
+<li>在指定的节点被删粗时自动断点<ul>
+<li>在Elements面板中元素上右键 > Break on > node removal。</li>
+</ul>
+</li>
+<li>在遇到死循环代码的时候<em>不会</em>自动断点。</li>
+</ul>
 
       
 
@@ -270,7 +294,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/18/%E5%89%8D%E7%AB%AF/debug/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/18/%E5%89%8D%E7%AB%AF/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" alt="微信分享二维码">
     </div>
 </div>
 
