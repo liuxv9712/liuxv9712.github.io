@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>操作系统/进程间通信的优劣 | 柳小白Blog</title>
+  <title>题目/generateParenthesis | 柳小白Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="进程通信方法的特点以及使用场景1. 什么是进程间通信因为每个进程各自有不同的用户地址空间，任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核，在内核中开辟一块缓冲区，进程1把数据从用户空间拷到内核缓冲区，进程2再从内核缓冲区把数据读走，内核提供的这种机制称为进程间通信（IPC，InterProcess Communication）          2. 进程间通信的">
+  <meta name="description" content="题目描述给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。 例如，给出 n &#x3D; 3，生成结果为： 1234567[  &quot;((()))&quot;,  &quot;(()())&quot;,  &quot;(())()&quot;,  &quot;()(())&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="操作系统&#x2F;进程间通信的优劣">
-<meta property="og:url" content="http://yoursite.com/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E4%BC%98%E5%8A%A3/index.html">
+<meta property="og:title" content="题目&#x2F;generateParenthesis">
+<meta property="og:url" content="http://yoursite.com/2020/02/20/%E9%A2%98%E7%9B%AE/generateParenthesis/index.html">
 <meta property="og:site_name" content="柳小白Blog">
-<meta property="og:description" content="进程通信方法的特点以及使用场景1. 什么是进程间通信因为每个进程各自有不同的用户地址空间，任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核，在内核中开辟一块缓冲区，进程1把数据从用户空间拷到内核缓冲区，进程2再从内核缓冲区把数据读走，内核提供的这种机制称为进程间通信（IPC，InterProcess Communication）          2. 进程间通信的">
+<meta property="og:description" content="题目描述给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。 例如，给出 n &#x3D; 3，生成结果为： 1234567[  &quot;((()))&quot;,  &quot;(()())&quot;,  &quot;(())()&quot;,  &quot;()(())&amp;">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://s2.ax1x.com/2020/02/14/1jTXiq.jpg">
-<meta property="article:published_time" content="2020-02-19T01:25:20.414Z">
-<meta property="article:modified_time" content="2020-02-19T01:01:26.210Z">
+<meta property="article:published_time" content="2020-02-20T14:50:09.697Z">
+<meta property="article:modified_time" content="2020-02-20T14:54:25.521Z">
 <meta property="article:author" content="Liu Xv">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.ax1x.com/2020/02/14/1jTXiq.jpg">
   
     <link rel="alternative" href="/atom.xml" title="柳小白Blog" type="application/atom+xml">
   
@@ -164,74 +162,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-操作系统/进程间通信的优劣" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-题目/generateParenthesis" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      操作系统/进程间通信的优劣
+      题目/generateParenthesis
     </h1>
   
 
         
-        <a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E4%BC%98%E5%8A%A3/" class="archive-article-date">
-  	<time datetime="2020-02-19T01:25:20.414Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
+        <a href="/2020/02/20/%E9%A2%98%E7%9B%AE/generateParenthesis/" class="archive-article-date">
+  	<time datetime="2020-02-20T14:50:09.697Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="进程通信方法的特点以及使用场景"><a href="#进程通信方法的特点以及使用场景" class="headerlink" title="进程通信方法的特点以及使用场景"></a>进程通信方法的特点以及使用场景</h1><h2 id="1-什么是进程间通信"><a href="#1-什么是进程间通信" class="headerlink" title="1. 什么是进程间通信"></a>1. 什么是进程间通信</h2><p>因为每个进程各自有不同的用户地址空间，任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核，在内核中开辟一块缓冲区，进程1把数据从用户空间拷到内核缓冲区，进程2再从内核缓冲区把数据读走，内核提供的这种机制称为<strong>进程间通信（IPC，InterProcess Communication）</strong></p>
-<div align="center">
-    <img src="https://s2.ax1x.com/2020/02/14/1jTXiq.jpg" width="960px">
-</div> 
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。</p>
+<p>例如，给出 n = 3，生成结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &quot;((()))&quot;,</span><br><span class="line">  &quot;(()())&quot;,</span><br><span class="line">  &quot;(())()&quot;,</span><br><span class="line">  &quot;()(())&quot;,</span><br><span class="line">  &quot;()()()&quot;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-进程间通信的方法"><a href="#2-进程间通信的方法" class="headerlink" title="2. 进程间通信的方法"></a>2. 进程间通信的方法</h2><ul>
-<li><p>（匿名）管道 Pipe</p>
-<ul>
-<li>半双工，即数据只能单向流动，两个进程间通信时需要建立两个管道</li>
-<li>由于匿名，只能在有亲缘关系（有公共祖先）的进程间使用，如父子进程、兄弟进程</li>
-<li>数据读写操作：一个进程从管道尾部写入数据，另一个进程从管道头部读出数据</li>
-</ul>
-</li>
-<li><p>命名管道 Named pipe</p>
-<ul>
-<li>半双工</li>
-<li>克服了匿名管道没有名字的限制，因此可以通过路径名在无亲缘关系的进程间通信</li>
-</ul>
-</li>
-<li><p>消息队列 Message Queue</p>
-<p>即数据块的链表，允许一个或多个进程向它写入数据，允许一个或多个进程从它读出数据</p>
-<p>消息队列克服了管道缓冲区大小受限的缺点，避免了管道的同步和阻塞问题，但是每个数据块依旧有一个最大长度的限制</p>
-</li>
-<li><p>共享内存 shared memory</p>
-<p>因为操作系统分配给每个进程的内存地址并不是实际的物理地址，而是虚拟地址，所以将两个进程各拿出一块虚拟地址映射到相同的物理地址，那么两个进程就可以直接读写内存而不用进行数据的拷贝</p>
-</li>
-<li><p>信号量 semaphore</p>
-<p>和其他IPC方法直接将数据从一个进程传递到另一个进程不同，信号量是一种控制多个进程对共享资源的访问，一种锁机制 。</p>
-<p>其本质是一个计数器，比如信号量初始值为0，当进程1来访问内存a时，信号量将被置为1，这是当另一个进程2要来访问相同的内存a时，由于发现信号量为1，就知道已经有进程在访问内存a，因此会被互斥。所以某种意义上来说，信号量也是IPC的一种。</p>
-</li>
-<li><p>信号 Signal</p>
-<p>信号用来通知进程发生了异步事件。有两种发送信号的方式可以通知进程一系列预定好的事件：</p>
-<ol>
-<li>进程间互相通过系统调用发送信号</li>
-<li>内核由于没写内部事件向进程发送信号</li>
-</ol>
-<p>接收到信号的进程可以根据不同的方式处理信号，比如：</p>
-<ol>
-<li>类似中断的处理程序，对于需要处理的信号，进程可以指定相应的处理函数</li>
-<li>忽略某个信号，对该信号不做任何处理</li>
-<li>对该信号的处理采取系统默认措施（大部分信号的默认处理是终止进程）</li>
-</ol>
-<p>举个常见的例子，比如当我们在terminal中按下<code>CTRL+C</code>时，terminal就将产生<code>SIGINT</code>信号，前台进程组中所有的进程都会收到<code>SIGINT</code>信号然后退出。</p>
-</li>
-<li><p>套接字 Socket</p>
-<p>可用于不同机器之间的进程通信</p>
-</li>
-</ul>
+<p>来源：力扣（LeetCode）<a href="https://leetcode-cn.com/problems/generate-parentheses" target="_blank" rel="noopener">https://leetcode-cn.com/problems/generate-parentheses</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">	@param &#123;number&#125; n</span><br><span class="line">	@return &#123;string[]&#125;</span><br><span class="line">*&#x2F;</span><br><span class="line"></span><br><span class="line">var generateParenthesis &#x3D; function(n)&#123;</span><br><span class="line">	let res &#x3D; []</span><br><span class="line">	function fn(str,l,r)&#123;</span><br><span class="line">		if(l&#x3D;&#x3D;n&amp;&amp;r&#x3D;&#x3D;n)&#123;</span><br><span class="line">			res.push(str);</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">		if(l&lt;n)&#123;</span><br><span class="line">			fn(str+&#39;(&#39;,l+1,r);</span><br><span class="line">		&#125;</span><br><span class="line">		if(l&gt;r)&#123;</span><br><span class="line">			fn(str+&#39;)&#39;,l,r+1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	fn(&quot;&quot;,0,0);</span><br><span class="line">	return res;</span><br><span class="line">&#125;</span><br><span class="line">generateParenthesis(3)</span><br></pre></td></tr></table></figure>
+<p>解法：递归（函数调用自身）<br>n对括号，有n个左括号和n个右括号。当左括号数l小于n时,加入左括号；当左括号l大于右括号r时，加入右括号；直到左括号l=n,且右括号r=n,返回序列。</p>
+<h3 id="面试题一"><a href="#面试题一" class="headerlink" title="面试题一"></a>面试题一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var a&#x3D;10;</span><br><span class="line">function test()&#123;</span><br><span class="line">	console.log(a);&#x2F;&#x2F;undefined</span><br><span class="line">	a&#x3D;100;</span><br><span class="line">	console.log(a);&#x2F;&#x2F;100</span><br><span class="line">	console.log(this.a)&#x2F;&#x2F;因为在node.js环境中没有window，所以运行的结果是undefined。而在浏览器环境下有window，结果是10</span><br><span class="line">	var a;</span><br><span class="line">	console.log(a)&#x2F;&#x2F;100</span><br><span class="line">&#125;</span><br><span class="line">test(); </span><br><span class="line">&#x2F;&#x2F;考查点：作用域，this，变量提升，函数调用</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -311,7 +270,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E4%BC%98%E5%8A%A3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/20/%E9%A2%98%E7%9B%AE/generateParenthesis/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -325,18 +284,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/20/%E9%A2%98%E7%9B%AE/generateParenthesis/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          题目/generateParenthesis
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">操作系统/进程、线程的区别和使用场景</div>
+    <a href="/2020/02/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E4%BC%98%E5%8A%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">操作系统/进程间通信的优劣</div>
       <i class="icon-circle-right"></i>
     </a>
   
