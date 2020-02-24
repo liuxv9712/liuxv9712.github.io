@@ -160,6 +160,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-题目/maxArea" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/24/%E9%A2%98%E7%9B%AE/maxArea/">题目/maxArea</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/24/%E9%A2%98%E7%9B%AE/maxArea/" class="archive-article-date">
+  	<time datetime="2020-02-24T14:45:35.769Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</p>
+<p>说明：你不能倾斜容器，且 n 的值至少为 2。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/container-with-most-water" target="_blank" rel="noopener">https://leetcode-cn.com/problems/container-with-most-water</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">height</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//暴力法：利用两层遍历，计算任意两个柱子所形成的容器的容量，保存最大的容量即可。</span></span><br><span class="line"><span class="comment">//O(n^2)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">maxArea</span>(<span class="params">height</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> res=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;height.length; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>; j&lt;height.length;j++)&#123;</span><br><span class="line">			res = <span class="built_in">Math</span>.max(res,(j-i)*<span class="built_in">Math</span>.min(height[i],height[j]));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line">maxArea([<span class="number">1</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">3</span>,<span class="number">7</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//双指针法：</span></span><br><span class="line"><span class="comment">//O(n)</span></span><br><span class="line"><span class="keyword">var</span> maxArea = <span class="function"><span class="keyword">function</span>(<span class="params">height</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">let</span> left = <span class="number">0</span>, right=height.length<span class="number">-1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(left!=right)&#123;</span><br><span class="line">		res = <span class="built_in">Math</span>.max(res,(right-left) * <span class="built_in">Math</span>.min(height[left],height[right]));</span><br><span class="line">		height[left]&lt;height[right] ? (left++):(right--);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line">maxArea([<span class="number">1</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">3</span>,<span class="number">7</span>])</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/24/%E9%A2%98%E7%9B%AE/maxArea/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-题目/generateParenthesis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -189,6 +255,7 @@
 <p>解法：递归（函数调用自身）<br>n对括号，有n个左括号和n个右括号。当左括号数l小于n时,加入左括号；当左括号l大于右括号r时，加入右括号；直到左括号l=n,且右括号r=n,返回序列。</p>
 <h3 id="面试题一"><a href="#面试题一" class="headerlink" title="面试题一"></a>面试题一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var a&#x3D;10;</span><br><span class="line">function test()&#123;</span><br><span class="line">	console.log(a);&#x2F;&#x2F;undefined</span><br><span class="line">	a&#x3D;100;</span><br><span class="line">	console.log(a);&#x2F;&#x2F;100</span><br><span class="line">	console.log(this.a)&#x2F;&#x2F;因为在node.js环境中没有window，所以运行的结果是undefined。而在浏览器环境下有window，结果是10</span><br><span class="line">	var a;</span><br><span class="line">	console.log(a)&#x2F;&#x2F;100</span><br><span class="line">&#125;</span><br><span class="line">test(); </span><br><span class="line">&#x2F;&#x2F;考查点：作用域，this，变量提升，函数调用</span><br></pre></td></tr></table></figure>
 
+<p>let ary = [1,2,3,4,5]<br>function fun(ary){<br>    ary[2]=0;<br>}<br>fun(ary);</p>
 
       
 
@@ -1419,81 +1486,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/02/15/MySQL/MySQL_why/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-前端/常用函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/14/%E5%89%8D%E7%AB%AF/%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/">JavaScript常用函数</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/14/%E5%89%8D%E7%AB%AF/%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-02-14T07:57:51.220Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-split-方法用于把一个字符串分割成字符串数组。-如："><a href="#1-split-方法用于把一个字符串分割成字符串数组。-如：" class="headerlink" title="1. split() 方法用于把一个字符串分割成字符串数组。 如："></a>1. split() 方法用于把一个字符串分割成字符串数组。 如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str&#x3D;&quot;how are you doing today?&quot;</span><br><span class="line">console.log(str.split(&quot; &quot;));     &#x2F;&#x2F;[&quot;how&quot;, &quot;are&quot;, &quot;you&quot;, &quot;doing&quot;, &quot;today?&quot;]</span><br><span class="line">console.log(str.split(&quot; &quot;,3));   &#x2F;&#x2F;[&quot;how&quot;, &quot;are&quot;, &quot;you&quot;]</span><br></pre></td></tr></table></figure>
-<h3 id="2-join-方法用于把数组中的所有元素放入一个字符串。如："><a href="#2-join-方法用于把数组中的所有元素放入一个字符串。如：" class="headerlink" title="2. join() 方法用于把数组中的所有元素放入一个字符串。如："></a>2. join() 方法用于把数组中的所有元素放入一个字符串。如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr &#x3D; [&quot;George&quot;,&quot;John&quot;,&quot;Thomas&quot;];</span><br><span class="line">console.log(arr.join());         &#x2F;&#x2F;&quot;George,John,Thomas&quot;</span><br><span class="line">console.log(arr.join(&quot;.&quot;));      &#x2F;&#x2F;&quot;George.John.Thomas&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="3-concat-方法用于连接两个或多个数组。如："><a href="#3-concat-方法用于连接两个或多个数组。如：" class="headerlink" title="3. concat() 方法用于连接两个或多个数组。如："></a>3. concat() 方法用于连接两个或多个数组。如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; [1,2,3], b&#x3D;[4,5,6]</span><br><span class="line">console.log(a.concat(4,5));  &#x2F;&#x2F;[1, 2, 3, 4, 5]</span><br><span class="line">console.log(a.concat(b));    &#x2F;&#x2F;[1, 2, 3, 4, 5, 6]</span><br></pre></td></tr></table></figure>
-<h3 id="4-pop-方法用于删除并返回数组的最后一个元素。如："><a href="#4-pop-方法用于删除并返回数组的最后一个元素。如：" class="headerlink" title="4. pop() 方法用于删除并返回数组的最后一个元素。如："></a>4. pop() 方法用于删除并返回数组的最后一个元素。如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr &#x3D; [&quot;George&quot;,&quot;John&quot;,&quot;Thomas&quot;];</span><br><span class="line">console.log(arr.pop());     &#x2F;&#x2F;&quot;Thomas&quot;</span><br><span class="line">console.log(arr);           &#x2F;&#x2F;[&quot;George&quot;, &quot;John&quot;]</span><br></pre></td></tr></table></figure>
-<h3 id="5-push-方法可向数组的末尾添加一个或多个元素，并返回新的长度。"><a href="#5-push-方法可向数组的末尾添加一个或多个元素，并返回新的长度。" class="headerlink" title="5. push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。"></a>5. push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr &#x3D; [&quot;George&quot;,&quot;John&quot;,&quot;Thomas&quot;];</span><br><span class="line">console.log(arr.push(&quot;tom&quot;));   &#x2F;&#x2F;4</span><br><span class="line">console.log(arr);               &#x2F;&#x2F;[&quot;George&quot;, &quot;John&quot;, &quot;Thomas&quot;, &quot;tom&quot;]</span><br></pre></td></tr></table></figure>
-<h3 id="6-reverse-方法用于颠倒数组中元素的顺序。如："><a href="#6-reverse-方法用于颠倒数组中元素的顺序。如：" class="headerlink" title="6. reverse() 方法用于颠倒数组中元素的顺序。如："></a>6. reverse() 方法用于颠倒数组中元素的顺序。如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr &#x3D; [&quot;George&quot;,&quot;John&quot;,&quot;Thomas&quot;];</span><br><span class="line">console.log(arr.reverse());     &#x2F;&#x2F;[&quot;tom&quot;, &quot;Thomas&quot;, &quot;John&quot;, &quot;George&quot;]</span><br></pre></td></tr></table></figure>
-<h3 id="7-shift-方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。-如果数组是空的，那么-shift-方法将不进行任何操作，返回-undefined-值。"><a href="#7-shift-方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。-如果数组是空的，那么-shift-方法将不进行任何操作，返回-undefined-值。" class="headerlink" title="7. shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。(如果数组是空的，那么 shift() 方法将不进行任何操作，返回 undefined 值。"></a>7. shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。(如果数组是空的，那么 shift() 方法将不进行任何操作，返回 undefined 值。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr &#x3D; [&quot;George&quot;,&quot;John&quot;,&quot;Thomas&quot;];</span><br><span class="line">console.log(arr.shift());       &#x2F;&#x2F;&quot;tom&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="8-slice-方法可从已有的数组中返回选定的元素。语法：arrayObject-slice-start-end-start-必需-end可选"><a href="#8-slice-方法可从已有的数组中返回选定的元素。语法：arrayObject-slice-start-end-start-必需-end可选" class="headerlink" title="8. slice() 方法可从已有的数组中返回选定的元素。语法：arrayObject.slice(start,end) start 必需,end可选"></a>8. slice() 方法可从已有的数组中返回选定的元素。语法：arrayObject.slice(start,end) start 必需,end可选</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr &#x3D; [&quot;George&quot;,&quot;John&quot;,&quot;Thomas&quot;];</span><br><span class="line">console.log(arr.slice(1));   &#x2F;&#x2F;[&quot;John&quot;, &quot;George&quot;]</span><br><span class="line">console.log(arr.slice(0,2)); &#x2F;&#x2F;[&quot;Thomas&quot;, &quot;John&quot;]</span><br></pre></td></tr></table></figure>
-<h3 id="9-sort-方法用于对数组的元素进行排序。（对数组元素首字母或首数字排序）如："><a href="#9-sort-方法用于对数组的元素进行排序。（对数组元素首字母或首数字排序）如：" class="headerlink" title="9. sort() 方法用于对数组的元素进行排序。（对数组元素首字母或首数字排序）如："></a>9. sort() 方法用于对数组的元素进行排序。（对数组元素首字母或首数字排序）如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr&#x3D;[&quot;George&quot;,&quot;John&quot;,&quot;Thomas&quot;,&quot;James&quot;,&quot;Adrew&quot;,&quot;Martin&quot;];</span><br><span class="line">console.log(arr.sort());  &#x2F;&#x2F;[&quot;Adrew&quot;, &quot;George&quot;, &quot;James&quot;, &quot;John&quot;, &quot;Martin&quot;, &quot;Thomas&quot;]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;对数字进行排序需借助函数</span><br><span class="line">var arr&#x3D;[10,5,40,25,1000,1];</span><br><span class="line">function sortNumber(a,b)&#123;</span><br><span class="line">  return a - b</span><br><span class="line">&#125;</span><br><span class="line">console.log(arr.sort(sortNumber));   &#x2F;&#x2F;[1, 5, 10, 25, 40, 1000]</span><br></pre></td></tr></table></figure>
-<h3 id="10-splice-方法向-从数组中添加-删除项目，然后返回被删除的项目。如："><a href="#10-splice-方法向-从数组中添加-删除项目，然后返回被删除的项目。如：" class="headerlink" title="10. splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。如："></a>10. splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr&#x3D;[&quot;George&quot;,&quot;John&quot;,&quot;Thomas&quot;,&quot;James&quot;,&quot;Adrew&quot;,&quot;Martin&quot;];</span><br><span class="line">&#x2F;&#x2F;删除从 index 2 (&quot;Thomas&quot;) 开始的三个元素，并添加一个新元素 (&quot;William&quot;) 来替代被删除的元素</span><br><span class="line">console.log(arr.splice(2,3,&quot;William&quot;));  &#x2F;&#x2F;[&quot;Thomas&quot;, &quot;James&quot;, &quot;Adrew&quot;]</span><br><span class="line">console.log(arr);    &#x2F;&#x2F;[&quot;George&quot;, &quot;John&quot;, &quot;William&quot;, &quot;Martin&quot;]</span><br></pre></td></tr></table></figure>
-<h3 id="11-toString-方法可把数组转换为字符串，并返回结果。如："><a href="#11-toString-方法可把数组转换为字符串，并返回结果。如：" class="headerlink" title="11. toString() 方法可把数组转换为字符串，并返回结果。如："></a>11. toString() 方法可把数组转换为字符串，并返回结果。如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr&#x3D;[&quot;George&quot;,&quot;John&quot;,&quot;Thomas&quot;,&quot;James&quot;,&quot;Adrew&quot;,&quot;Martin&quot;];</span><br><span class="line">console.log(arr.toString());   &#x2F;&#x2F;&quot;George,John,Thomas,James,Adrew,Martin&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="12-valueOf-方法返回-Array-对象的原始值。如："><a href="#12-valueOf-方法返回-Array-对象的原始值。如：" class="headerlink" title="12. valueOf() 方法返回 Array 对象的原始值。如："></a>12. valueOf() 方法返回 Array 对象的原始值。如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr&#x3D;[&quot;George&quot;,&quot;John&quot;,&quot;Thomas&quot;];</span><br><span class="line">console.log(arr.valueOf());  &#x2F;&#x2F;[&quot;George&quot;,&quot;John&quot;,&quot;Thomas&quot;]</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/14/%E5%89%8D%E7%AB%AF/%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/">展开全文 >></a>
         </p>
       
 
